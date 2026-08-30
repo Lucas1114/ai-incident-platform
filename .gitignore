@@ -1,0 +1,9 @@
+.venv/
+/source/
+.env
+.env.*
+__pycache__/
+.pytest_cache/
+.DS_Store
+notes/local/
+*.local.md
