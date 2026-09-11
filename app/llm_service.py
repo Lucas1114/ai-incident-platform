@@ -18,8 +18,10 @@ def investigate_incident(incident: str) -> InvestigationResult:
             "You are an incident investigation assistant. Analyze the incident "
             "and produce the requested investigation result. Treat the "
             "leading_hypothesis as a hypothesis, not a confirmed root cause. "
-            "Limit evidence to observed facts and signals. Return exactly one "
-            "recommended next action."
+            "Limit evidence to facts and signals explicitly stated in the "
+            "incident. Return exactly one concrete diagnostic action in "
+            "recommended_next_action; do not combine multiple checks or add a "
+            "remediation step."
         ),
         input=incident,
         max_output_tokens=800,

@@ -2,8 +2,9 @@
 
 [![CI](https://github.com/Lucas1114/ai-incident-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucas1114/ai-incident-platform/actions/workflows/ci.yml)
 
-A production-deployed FastAPI application that turns an incident description
-into a concise, structured investigation brief using an OpenAI model.
+A publicly deployed FastAPI portfolio application that turns an incident
+description into a concise, structured investigation brief using an OpenAI
+model.
 
 **[Try the live demo](https://ai-incident-platform-152544821369.australia-southeast1.run.app/)** ·
 [API documentation](https://ai-incident-platform-152544821369.australia-southeast1.run.app/docs) ·
@@ -11,11 +12,11 @@ into a concise, structured investigation brief using an OpenAI model.
 
 ## What it demonstrates
 
-- Production API design with FastAPI and Pydantic
+- API design with FastAPI and Pydantic
 - Schema-constrained LLM output instead of free-form text parsing
 - Careful AI semantics: a leading hypothesis is not presented as a confirmed root cause
-- Evidence restricted to observed facts and signals from the submitted incident
-- One focused recommended next action
+- A prompt that asks the model to restrict evidence to submitted observations
+- One diagnostic next action requested from the model
 - Public-cloud deployment with CI, secret management, rate limiting, and cost controls
 - A responsive browser interface for demonstrating the complete workflow
 
@@ -79,6 +80,9 @@ The response schema contains only:
 
 This is a deliberately small public portfolio demo:
 
+- Use synthetic or redacted incident descriptions. Submitted text is sent to
+  OpenAI for analysis.
+
 - Incident descriptions are limited to 4,000 characters.
 - Model responses are capped at 800 output tokens.
 - Each client can submit up to five investigations per hour.
@@ -124,6 +128,7 @@ Open `http://127.0.0.1:8000` for the demo or
 ## Test and build
 
 ```shell
+python -m pip install '.[test]'
 python -m unittest discover -s tests -v
 docker build -t ai-incident-platform .
 ```
