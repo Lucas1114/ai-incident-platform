@@ -1,6 +1,9 @@
 """Application entry point."""
 
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse
 
 from app.llm_service import investigate_incident
 from app.models import InvestigationRequest, InvestigationResult
@@ -8,6 +11,12 @@ from app.rate_limit import RateLimiter
 
 app = FastAPI()
 investigation_rate_limiter = RateLimiter(max_requests=5, window_seconds=3600)
+demo_page = Path(__file__).parent / "static" / "index.html"
+
+
+@app.get("/", include_in_schema=False)
+def demo():
+    return FileResponse(demo_page)
 
 
 @app.get("/health")

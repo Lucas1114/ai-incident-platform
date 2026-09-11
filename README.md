@@ -10,6 +10,7 @@ recommend one next action.
 
 The service is deployed on Google Cloud Run:
 
+- Live demo: https://ai-incident-platform-152544821369.australia-southeast1.run.app
 - API documentation: https://ai-incident-platform-152544821369.australia-southeast1.run.app/docs
 - Health check: https://ai-incident-platform-152544821369.australia-southeast1.run.app/health
 

@@ -11,6 +11,12 @@ from app.rate_limit import RateLimiter
 
 
 class InvestigationEndpointTests(unittest.TestCase):
+    def test_serves_demo_page(self) -> None:
+        response = TestClient(app).get("/")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("Incident Investigation", response.text)
+
     @patch("app.main.investigation_rate_limiter", RateLimiter(5, 3600))
     @patch("app.main.investigate_incident")
     def test_rate_limits_sixth_request(self, investigate_incident) -> None:
