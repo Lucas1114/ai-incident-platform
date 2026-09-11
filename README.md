@@ -10,6 +10,8 @@ model.
 [API documentation](https://ai-incident-platform-152544821369.australia-southeast1.run.app/docs) ·
 [Health check](https://ai-incident-platform-152544821369.australia-southeast1.run.app/health)
 
+![AI Incident Investigation Platform showing a structured investigation result](docs/live-demo.png)
+
 ## What it demonstrates
 
 - API design with FastAPI and Pydantic
