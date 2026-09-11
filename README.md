@@ -1,5 +1,7 @@
 # AI Incident Investigation Platform
 
+[![CI](https://github.com/Lucas1114/ai-incident-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucas1114/ai-incident-platform/actions/workflows/ci.yml)
+
 A FastAPI service that uses structured LLM output to summarize an incident,
 assign its severity, identify a leading hypothesis, list observed evidence, and
 recommend one next action.
