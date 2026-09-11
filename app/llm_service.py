@@ -16,7 +16,10 @@ def investigate_incident(incident: str) -> InvestigationResult:
         model="gpt-5.6-luna",
         instructions=(
             "You are an incident investigation assistant. Analyze the incident "
-            "and produce the requested investigation result."
+            "and produce the requested investigation result. Treat the "
+            "leading_hypothesis as a hypothesis, not a confirmed root cause. "
+            "Limit evidence to observed facts and signals. Return exactly one "
+            "recommended next action."
         ),
         input=incident,
         text_format=InvestigationResult,

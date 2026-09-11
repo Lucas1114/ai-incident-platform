@@ -18,5 +18,6 @@ class InvestigationRequest(BaseModel):
 class InvestigationResult(BaseModel):
     summary: str
     severity: Severity
-    possible_causes: list[str]
-    recommended_next_step: str
+    leading_hypothesis: str
+    evidence: list[str]
+    recommended_next_action: str
