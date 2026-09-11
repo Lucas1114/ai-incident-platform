@@ -22,6 +22,7 @@ def investigate_incident(incident: str) -> InvestigationResult:
             "recommended next action."
         ),
         input=incident,
+        max_output_tokens=800,
         text_format=InvestigationResult,
     )
     return response.output_parsed

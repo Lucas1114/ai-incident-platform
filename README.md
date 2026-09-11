@@ -19,6 +19,10 @@ Send an incident description to `POST /investigate`:
 }
 ```
 
+To control public-demo usage, incident descriptions are limited to 4,000
+characters and each client can submit up to five investigations per hour.
+Rate-limited requests return HTTP `429` with a `Retry-After` header.
+
 ## Run locally
 
 Set `OPENAI_API_KEY`, then run:

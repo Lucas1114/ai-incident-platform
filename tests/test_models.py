@@ -4,10 +4,14 @@ import unittest
 
 from pydantic import ValidationError
 
-from app.models import InvestigationResult, Severity
+from app.models import InvestigationRequest, InvestigationResult, Severity
 
 
 class InvestigationResultTests(unittest.TestCase):
+    def test_rejects_incident_over_4000_characters(self) -> None:
+        with self.assertRaises(ValidationError):
+            InvestigationRequest(incident="x" * 4001)
+
     def test_uses_investigation_schema(self) -> None:
         result = InvestigationResult(
             summary="Requests are timing out.",

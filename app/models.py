@@ -12,7 +12,7 @@ class Severity(str, Enum):
 
 
 class InvestigationRequest(BaseModel):
-    incident: str = Field(min_length=1)
+    incident: str = Field(min_length=1, max_length=4000)
 
 
 class InvestigationResult(BaseModel):
