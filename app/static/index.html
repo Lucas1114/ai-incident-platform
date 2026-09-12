@@ -71,6 +71,22 @@
       .brand strong { display: block; font-size: 1rem; }
       .brand span { color: var(--muted); font-size: 0.8125rem; }
 
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .repo-link {
+        color: #c9d8e7;
+        font-size: 0.875rem;
+        text-decoration-color: #526b84;
+        text-underline-offset: 4px;
+      }
+
+      .repo-link:hover { color: var(--mint); }
+      .repo-link:focus-visible { outline: 3px solid rgba(96, 165, 250, 0.55); outline-offset: 4px; }
+
       .status {
         display: inline-flex;
         align-items: center;
@@ -304,6 +320,7 @@
       @media (max-width: 800px) {
         .shell { width: min(100% - 24px, 680px); padding-top: 18px; }
         header { margin-bottom: 38px; }
+        .header-actions { gap: 12px; }
         .status { font-size: 0; }
         .status::after { content: "Live"; font-size: 0.8125rem; }
         .workspace { grid-template-columns: minmax(0, 1fr); }
@@ -315,6 +332,8 @@
 
       @media (max-width: 480px) {
         .actions { flex-direction: column-reverse; }
+        .repo-link { font-size: 0; }
+        .repo-link::after { content: "GitHub ↗"; font-size: 0.8125rem; }
         .intro > p:last-child { font-size: 1rem; }
         h1 { font-size: 2.35rem; }
       }
@@ -331,7 +350,10 @@
           <div class="mark" aria-hidden="true">IR</div>
           <div><strong>Incident Review</strong><span>AI investigation console</span></div>
         </div>
-        <div class="status">Live on Cloud Run</div>
+        <div class="header-actions">
+          <a class="repo-link" href="https://github.com/Lucas1114/ai-incident-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+          <div class="status">Live on Cloud Run</div>
+        </div>
       </header>
 
       <main>
