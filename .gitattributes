@@ -1,0 +1,5 @@
+# The demo page is one file of 17.7 KB with its CSS and JS inlined, which is
+# larger than the whole Python service. Linguist counts bytes, so it labelled
+# this repository HTML. The page is part of the project, not vendored code and
+# not documentation, so it is excluded from the language statistics only.
+app/static/index.html linguist-detectable=false
